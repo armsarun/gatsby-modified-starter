@@ -8,7 +8,7 @@
   Gatsby starter blog with search and category filter
 </h1>
 
-This project modified version of gatsby started blog![gatsby starter blog](https://github.com/gatsbyjs/gatsby-starter-blog). This will show posts archives(show posts based on category) and allow the ![search](https://lunrjs.com/) all the posts.
+This project modified version of gatsby started blog [gatsby starter blog](https://github.com/gatsbyjs/gatsby-starter-blog). This will show posts archives(show posts based on category) and allow the ![search](https://lunrjs.com/) all the posts.
 
 
 ## 🚀 Quick start
