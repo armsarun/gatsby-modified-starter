@@ -8,7 +8,7 @@
   Gatsby starter blog with search and category filter
 </h1>
 
-This project modified version of gatsby started blog [gatsby starter blog](https://github.com/gatsbyjs/gatsby-starter-blog). This will show posts archives(show posts based on category) and allow the ![search](https://lunrjs.com/) all the posts.
+This project modified version of gatsby started blog [gatsby starter blog](https://github.com/gatsbyjs/gatsby-starter-blog). This will show posts archives(show posts based on category) and allow the [search](https://lunrjs.com/) all the posts.
 
 
 ## 🚀 Quick start
@@ -48,7 +48,7 @@ Looking for more guidance? Full documentation for Gatsby lives [on the website](
 
 ## 🎓 Learning Lunr.js
 
-Checkout this blogpost ![Gatsby Site Search with Lunr.js](https://assortment.io/posts/gatsby-site-search-lunr-js) and ![Lunr.js documentation](https://lunrjs.com/docs/index.html) for more information.
+Checkout this blogpost [Gatsby Site Search with Lunr.js](https://assortment.io/posts/gatsby-site-search-lunr-js) and [Lunr.js documentation](https://lunrjs.com/docs/index.html) for more information.
 
 ## 💫 Deploy
 
