@@ -1,10 +1,14 @@
-
 import styled from "styled-components"
 
 export const FlexRow = styled.div`
-display: flex;
+    display: flex;
 `
 
+export const LayoutBlogContainer = styled.div`
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 45rem;
+`
 export const FooterLinks = styled(FlexRow)`
      justify-content: space-evenly;
      & a{
@@ -15,6 +19,7 @@ export const FooterLinks = styled(FlexRow)`
 
 export const BioContent= styled(FlexRow)`
   flex-direction: column;
+  margin-left: 15px;
 `
 
 export const BioContainer = styled(FlexRow)`

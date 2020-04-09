@@ -28,7 +28,7 @@ const Search = ({ data, location }) => {
       <SearchForm query={searchQuery} />
 
       { results.length !== 0 && <SearchResults query={searchQuery} results={results} /> }
-      { location.search && results.length === 0 && <h4>Found 0 post on {location.search.match(/\=(.*)/)[1]}</h4>}
+      { location.search && results.length === 0 && <h4 style={{ color: 'red'}}>Found 0 post on {location.search.match(/\=(.*)/)[1]}</h4>}
 
     </Layout>
   )
