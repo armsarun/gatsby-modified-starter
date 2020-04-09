@@ -10,7 +10,7 @@
 
 This project modified version of gatsby started blog [gatsby starter blog](https://github.com/gatsbyjs/gatsby-starter-blog). This will show posts archives(show posts based on category) and allow the [search](https://lunrjs.com/) all the posts.
 
-Visit [sample](https://arunkumarpalanisamy.netlify.com/) site.
+Checkout the [sample site](https://arunkumarpalanisamy.netlify.com/).
 
 
 ## 🚀 Quick start
