@@ -1,24 +1,29 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
 
-import Bio from "../components/bio"
+
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { rhythm } from "../utils/typography"
+import {BlogMeta} from "../styles/common"
 
-const BlogIndex = ({ data, location }) => {
-  const siteTitle = data.site.siteMetadata.title
-  const posts = data.allMarkdownRemark.edges
+class BlogIndex extends React.Component {
+  render() {
+    const { data } = this.props
+    const siteTitle = data.site.siteMetadata.title
+    const posts = data.allMarkdownRemark.edges
 
-  return (
-    <Layout location={location} title={siteTitle}>
-      <SEO title="All posts" />
-      <Bio />
-      {posts.map(({ node }) => {
-        const title = node.frontmatter.title || node.fields.slug
-        return (
-          <article key={node.fields.slug}>
-            <header>
+    return (
+      <Layout location={this.props.location} title={siteTitle}>
+        <SEO
+          title="All posts"
+          keywords={[`blog`, `gatsby`, `javascript`, `react`]}
+        />
+
+        {posts.map(({ node }) => {
+          const title = node.frontmatter.title || node.fields.slug
+          return (
+            <div key={node.fields.slug}>
               <h3
                 style={{
                   marginBottom: rhythm(1 / 4),
@@ -28,20 +33,23 @@ const BlogIndex = ({ data, location }) => {
                   {title}
                 </Link>
               </h3>
-              <small>{node.frontmatter.date}</small>
-            </header>
-            <section>
+              <hr/>
+              <BlogMeta>
+              <small>Created: <strong>{node.frontmatter.date}</strong></small>
+              <small>Author: <strong>{node.frontmatter.author}</strong></small>
+              <small>Category: <strong>{node.frontmatter.category}</strong></small>
+              </BlogMeta>
               <p
                 dangerouslySetInnerHTML={{
-                  __html: node.frontmatter.description || node.excerpt,
+                  __html: node.frontmatter.html || node.excerpt,
                 }}
               />
-            </section>
-          </article>
-        )
-      })}
-    </Layout>
-  )
+            </div>
+          )
+        })}
+      </Layout>
+    )
+  }
 }
 
 export default BlogIndex
@@ -61,12 +69,24 @@ export const pageQuery = graphql`
             slug
           }
           frontmatter {
-            date(formatString: "MMMM DD, YYYY")
+            date
             title
-            description
+            author
+            category
           }
         }
       }
     }
   }
 `
+// frontmatter {
+//   date
+//   title
+//   description
+// }
+  // date(formatString: "MMMM DD, YYYY")
+  // <p
+  //   dangerouslySetInnerHTML={{
+  //     __html: node.frontmatter.description || node.excerpt,
+  //   }}
+  // />

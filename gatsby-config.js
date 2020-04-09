@@ -1,14 +1,11 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Starter Blog`,
-    author: {
-      name: `Kyle Mathews`,
-      summary: `who lives and works in San Francisco building useful things.`,
-    },
-    description: `A starter blog demonstrating what Gatsby can do.`,
-    siteUrl: `https://gatsby-starter-blog-demo.netlify.com/`,
+    title: `Arunkumar`,
+    author: `Arunkumar`,
+    description: `Digital record of my readings and thoughts`,
+    siteUrl: `https://gatsby-starter-blog-with-lunr-demo.netlify.com/`,
     social: {
-      twitter: `kylemathews`,
+      twitter: `https://twitter.com/armsarun`,
     },
   },
   plugins: [
@@ -60,15 +57,16 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Gatsby Starter Blog`,
-        short_name: `GatsbyJS`,
+        name: `Arunkumar's blog`,
+        short_name: `Personal blog`,
         start_url: `/`,
         background_color: `#ffffff`,
         theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `content/assets/gatsby-icon.png`,
+        icon: `content/assets/ak.png`,
       },
     },
+    `gatsby-plugin-offline`,
     `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-plugin-typography`,
@@ -76,8 +74,28 @@ module.exports = {
         pathToConfigModule: `src/utils/typography`,
       },
     },
-    // this (optional) plugin enables Progressive Web App + Offline functionality
-    // To learn more, visit: https://gatsby.dev/offline
-    // `gatsby-plugin-offline`,
+    {
+      resolve: "gatsby-plugin-lunr",
+      options: {
+        languages: [{ name: "en" }],
+        fields: [
+          { name: "title", store: true, attributes: { boost: 20 } },
+          { name: "description", store: true, attributes: { boost: 5 } },
+          { name: "content" },
+          { name: "url", store: true },
+          { name: "date", store: true },
+        ],
+        resolvers: {
+          MarkdownRemark: {
+            title: node => node.frontmatter.title,
+            description: node => node.frontmatter.description,
+            content: node => node.rawMarkdownBody,
+            url: node => node.fields.slug,
+            date: node => node.frontmatter.date,
+          },
+        },
+        filename: "search_index.json",
+      },
+    },
   ],
 }
