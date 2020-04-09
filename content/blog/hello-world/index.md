@@ -1,6 +1,6 @@
 ---
 title: Hello World
-date: 2015-05-01
+date: '2015-05-01'
 author: arunkumar
 category: general
 ---

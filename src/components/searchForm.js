@@ -1,10 +1,13 @@
 import React from "react"
 import { navigate } from "gatsby"
 
+import {SearchContainer} from "../styles/common"
+
 const SearchForm = ({ query }) => (
   <form role="search" method="GET">
+  <SearchContainer>
     <label htmlFor="search-input">
-      <h1>Search posts</h1>
+      <h4>Search Posts</h4>
     </label>
     <input
       type="search"
@@ -17,6 +20,7 @@ const SearchForm = ({ query }) => (
       value={query}
     />
     <button type="submit">Submit</button>
+    </SearchContainer>
   </form>
 )
 

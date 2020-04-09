@@ -1,36 +1,13 @@
 import React from "react"
-import { Link } from "gatsby"
 
 import Header from "./header"
-import { rhythm, scale } from "../utils/typography"
+import { rhythm } from "../utils/typography"
 import "../styles/with-lunr.css"
 import {MainContainer, FooterLinks} from "../styles/common"
 
 class Layout extends React.Component {
   render() {
-    const { location, title, children } = this.props
-    const rootPath = `${__PATH_PREFIX__}/`
-    // let header
-    // header = (
-    //   <h3
-    //     style={{
-    //       fontFamily: `Montserrat, sans-serif`,
-    //       marginTop: 0,
-    //     }}
-    //   >
-    //     <Link
-    //       style={{
-    //         boxShadow: `none`,
-    //         textDecoration: `none`,
-    //         color: `inherit`,
-    //       }}
-    //       to={`/`}
-    //     >
-    //       {title}
-    //     </Link>
-    //   </h3>
-    // )
-
+    const { children } = this.props
     return (
       <MainContainer>
           <Header/>
@@ -48,9 +25,9 @@ class Layout extends React.Component {
               <a href="https://www.gatsbyjs.org">Gatsby</a>*/}
               <FooterLinks>
               <small><strong>Follow me on</strong></small>
-              <a href="https://twitter.com/armsarun" target="_blank">Twitter</a>
-              <a href="https://github.com/armsarun/" target="_blank">Github</a>
-              <a href="https://www.linkedin.com/in/arunkumarpalanisamy/"target="_blank">Linkedin</a>
+              <a href="https://twitter.com/armsarun" target="_blank" rel="noopener noreferrer">Twitter</a>
+              <a href="https://github.com/armsarun/" target="_blank" rel="noopener noreferrer">Github</a>
+              <a href="https://www.linkedin.com/in/arunkumarpalanisamy/"target="_blank" rel="noopener noreferrer">Linkedin</a>
               </FooterLinks>
             </footer>
             </div>

@@ -27,7 +27,9 @@ const Search = ({ data, location }) => {
   return (
     <Layout location={location} title={data.site.siteMetadata.title}>
       <SearchForm query={searchQuery} />
-      <SearchResults query={searchQuery} results={results} />
+      {results.length ? <SearchResults query={searchQuery} results={results} /> : <div>No data</div>}
+
+
     </Layout>
   )
 }

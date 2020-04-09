@@ -3,8 +3,6 @@ import { Link, graphql } from "gatsby"
 
 import Layout from "../components/layout"
 
-import {ArchiveContentContainer} from "../styles/common"
-
 class Archives extends React.Component {
 
   render() {
@@ -36,20 +34,21 @@ class Archives extends React.Component {
               <h2>
                 {item[0]}
               </h2>
+              <ol>
               {item[1].map(({node}, index)=>{
                   const title = node.frontmatter.title || node.field.slug
                   return (
                     <React.Fragment>
-                        <ArchiveContentContainer>
-                        <span>{index + 1} &nbsp;&nbsp;</span>
-                        <Link style={{ boxShadow: `none` }} to={node.fields.slug}>
-                            {title}
-                        </Link>
-                        </ArchiveContentContainer>
+                        <li key={index}>
+                            <Link style={{ boxShadow: `none` }} to={node.fields.slug}>
+                                {title}
+                            </Link>
+                        </li>
                         <hr/>
                     </React.Fragment>
                     )
               })}
+              </ol>
           </section>
         ))}
       </Layout>

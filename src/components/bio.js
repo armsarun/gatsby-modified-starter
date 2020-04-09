@@ -17,7 +17,7 @@ function Bio() {
     <StaticQuery
       query={bioQuery}
       render={data => {
-        const { author, social, description } = data.site.siteMetadata
+        const { author, description } = data.site.siteMetadata
         return (
           <BioContainer>
               <Link to='/'>

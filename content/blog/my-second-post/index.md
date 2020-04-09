@@ -1,6 +1,6 @@
 ---
 title: My Second Post!
-date: 2015-05-06
+date: '2015-05-06'
 author: arunkumar
 category: general
 ---

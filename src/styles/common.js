@@ -1,4 +1,4 @@
-import React from "react"
+
 import styled from "styled-components"
 
 export const FlexRow = styled.div`
@@ -12,7 +12,6 @@ export const FooterLinks = styled(FlexRow)`
         margin-left: 10px;
      }
 `
-
 
 export const BioContent= styled(FlexRow)`
   flex-direction: column;
@@ -44,6 +43,27 @@ export const MainContainer = styled.div`
   padding: 30px
 `
 
-export const ArchiveContentContainer = styled(FlexRow)`
-
+export const SearchContainer = styled(FlexRow)`
+  flex-direction: column;
+  align-items:center;
+  & button {
+    width: 46%;
+    margin-top: 20px;
+    text-align: center;
+    padding: 15px;
+    background: blue;
+    border: none;
+    box-shadow: none;
+    border-radius: 5px;
+    color:white;
+    outline:none;
+  }
+  & input, input:active, input:focus, input:hover{
+    width: 100%;
+    border-top: 0;
+    border-left: 0;
+    border-right: 0;
+    border-color: #666;
+    outline:none;
+}
 `
