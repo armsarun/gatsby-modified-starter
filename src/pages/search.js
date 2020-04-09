@@ -23,12 +23,12 @@ const Search = ({ data, location }) => {
 
     if (!searchQuery) setResults([])
   }, [location.search])
-
   return (
     <Layout location={location} title={data.site.siteMetadata.title}>
       <SearchForm query={searchQuery} />
-      {results.length ? <SearchResults query={searchQuery} results={results} /> : <div>No data</div>}
 
+      { results.length !== 0 && <SearchResults query={searchQuery} results={results} /> }
+      { location.search && results.length === 0 && <h4>Found 0 post on {location.search.match(/\=(.*)/)[1]}</h4>}
 
     </Layout>
   )
